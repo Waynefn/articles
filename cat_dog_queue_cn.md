@@ -4,7 +4,8 @@
 
 原题目使用Java作为示范，本文章提供C++解法。
 猫狗两个类的定义如下
-```
+```C++
+
 public class Pet {  
     private String type;  
     public Pet(String type){  
@@ -13,14 +14,16 @@ public class Pet {
     public String getPetType(){  
         return this.type;  
     }  
-}  
+}
+
 public class Dog extends Pet {  
   
     public Dog() {  
         super("dog");  
     }  
   
-}  
+}
+
 public class Cat extends Pet {  
   
     public Cat(String type) {  
@@ -41,7 +44,7 @@ public class Cat extends Pet {
 + 用户可以调用isCatEmpty方法，检查队列中是否还有cat的实例
 
 附上原题目的C++代码
-```
+```C++
 class Pet {
 	string type;
 public:
@@ -76,7 +79,7 @@ public:
 基本方法是写一个带有时间戳的类型PetCount，使其含有一个用于记录先后顺序的计数器count，每次入队的时候根据类型进入对应的队列，并赋予独一无二的时间戳。出队的时候根据要求比较先后时间即可。
 
 现定义PetCount类如下：
-```
+```C++
 class PetCount {
 	Pet* pet;
 	int count;
@@ -98,7 +101,7 @@ public:
 ```
 这里使用指针的原因是，C++中父类即使用来保存子类，也不能再次转换成子类，因为数据会被截断。只有使用指针才能实现类的转换。另一种更方便的方式是定义两种Count类，分别存储猫狗两种类。
 之后题目所需类的实现如下所示：
-```
+```C++
 class DogCatQueue {
 	queue<PetCount>catq;
 	queue<PetCount>dogq;
